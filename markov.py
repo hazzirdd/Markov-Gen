@@ -1,5 +1,3 @@
-
-
 from cgitb import text
 from hashlib import new
 from random import choice
@@ -51,16 +49,16 @@ def make_text(chains):
 
     return ' '.join(words)
     
+def main(input_text):
+    # input_path = 'green-eggs.txt'
 
-input_path = 'green-eggs.txt'
+    # Open the file and turn it into one long string
+    # input_text = open_and_read_file(input_path)
 
-# Open the file and turn it into one long string
-input_text = open_and_read_file(input_path)
+    # Get a Markov chain
+    chains = make_chains(input_text)
 
-# Get a Markov chain
-chains = make_chains(input_text)
+    # Produce random text
+    random_text = make_text(chains)
 
-# Produce random text
-random_text = make_text(chains)
-
-print(random_text)
+    return random_text
